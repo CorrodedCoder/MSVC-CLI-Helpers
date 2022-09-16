@@ -1,7 +1,7 @@
 import re
 from collections import Counter
 
-_warning_matcher = re.compile('^.*: warning C([0-9]{4}):(.*)$')
+_warning_matcher = re.compile('^.*: warning C([0-9]{4}): (.*)$')
 
 def warning_parser(stream):
 	for line in stream:
@@ -21,5 +21,4 @@ def summarize_warnings(stream):
 if __name__ == '__main__':
 	import sys
 	summary = summarize_warnings(sys.stdin)
-	print('Warning counts:\n--------------\n')
 	print('\n'.join('%s: count=%d, example=\"%s\"' % warning_details for warning_details in summary))
