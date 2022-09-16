@@ -138,3 +138,15 @@ For example:
 `set MSVS_INSTALL_ROOT=D:\Program Files (x86)\Microsoft Visual Studio`  
 Or:  
 `set MSVS_INSTALL_ROOT=D:\Program Files\Microsoft Visual Studio`  
+
+# msvcwarn.py
+A python 2/3 script to summarize the warning output piped to it from a Microsoft Visual C++ compilation, into a table of warning, count, and an example of warning text. This is useful if, for example, you wish to increase the warning level of a large body of code but don't necessarily want to go line by line through the output (yet).
+
+Example output:
+```
+4100: count=2, example=" 'argc' : unreferenced formal parameter"
+4350: count=1, example=" behavior change: 'std::_Wrap_alloc<_Alloc>::_Wrap_alloc(const std::_Wrap_alloc<_Alloc> &) throw()' called instead of 'std::_Wrap_alloc<_Alloc>::_Wrap_alloc<std::_Wrap_alloc<_Alloc>>(_Other &) throw()'"
+4530: count=1, example=" C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc"
+4668: count=1, example=" 'NTDDI_WIN7SP1' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'"
+4820: count=1070, example=" 'tagIMEMENUITEMINFOW' : '4' bytes padding added after data member 'tagIMEMENUITEMINFOW::szString'"
+```
