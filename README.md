@@ -74,7 +74,7 @@ usage: cl [ option... ] filename... [ /link linkoption... ]
 C:\>exit
 ```
 
-### Build using CMake/Meson
+### Build using Meson
 ```
 msvcenv.bat 2022 x86 meson setup --buildtype=debug vs2022_x86_debug
 msvcenv.bat 2022 x86 meson compile -C vs2022_x86_debug
